@@ -372,6 +372,36 @@ Transform:
   m_Children:
   - {fileID: 2099707534}
   m_Father: {fileID: 0}
+  m_RootOrder: 2
+--- !u!1 &521804392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 521804393}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521804393
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521804392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2658834, y: -0.49857038, z: 4.5395026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 869638170}
+  - {fileID: 1369531753}
+  - {fileID: 809792943}
+  m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &809792939
 GameObject:
@@ -386,7 +416,7 @@ GameObject:
   - 23: {fileID: 809792940}
   - 208: {fileID: 809792944}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Obstruction (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,11 +474,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809792939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.24, y: 0.6, z: -3.68}
+  m_LocalPosition: {x: 2.0258834, y: 1.0985703, z: -8.219502}
   m_LocalScale: {x: 1.6998488, y: 1.4003688, z: 1.9974087}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 521804393}
+  m_RootOrder: 2
 --- !u!208 &809792944
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -534,11 +564,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869638166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.2658834, y: 0.49857038, z: -4.5395026}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 521804393}
+  m_RootOrder: 0
 --- !u!1 &1369531749
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +582,7 @@ GameObject:
   - 23: {fileID: 1369531750}
   - 208: {fileID: 1369531754}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Obstruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,11 +640,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1369531749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.86, y: 0.6, z: -6.11}
+  m_LocalPosition: {x: 9.125883, y: 1.0985703, z: -10.649503}
   m_LocalScale: {x: 1.6998488, y: 1.4003688, z: 1.9974087}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 521804393}
+  m_RootOrder: 1
 --- !u!208 &1369531754
 NavMeshObstacle:
   m_ObjectHideFlags: 0

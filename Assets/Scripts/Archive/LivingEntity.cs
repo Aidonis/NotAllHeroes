@@ -1,43 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LivingEntity : MonoBehaviour, IDamageable {
-
-    public float startingHealth;
-    protected float health;
-    protected bool dead;
-
-    public event System.Action OnDeath;
-
-    protected virtual void Start()
+namespace TDShooter
+{
+    public class LivingEntity : MonoBehaviour, IDamageable
     {
-        health = startingHealth;
-    }
 
-    public void TakeHit(float damage, RaycastHit hit)
-    {
-        //Stuff with hit variable coming soon
-        TakeDamage(damage);
-    }
+        public float startingHealth;
+        protected float health;
+        protected bool dead;
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
+        public event System.Action OnDeath;
 
-        if (health <= 0 && !dead)
+        protected virtual void Start()
         {
-            Die();
+            health = startingHealth;
         }
-    }
 
-    [ContextMenu("Self Destruct")]
-    protected void Die()
-    {
-        dead = true;
-        if(OnDeath != null)
+        public void TakeHit(float damage, RaycastHit hit)
         {
-            OnDeath();
+            //Stuff with hit variable coming soon
+            TakeDamage(damage);
         }
-        GameObject.Destroy(gameObject);
+
+        public void TakeDamage(float damage)
+        {
+            health -= damage;
+
+            if (health <= 0 && !dead)
+            {
+                Die();
+            }
+        }
+
+        [ContextMenu("Self Destruct")]
+        protected void Die()
+        {
+            dead = true;
+            if (OnDeath != null)
+            {
+                OnDeath();
+            }
+            GameObject.Destroy(gameObject);
+        }
     }
 }
