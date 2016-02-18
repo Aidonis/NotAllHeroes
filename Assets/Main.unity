@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbcbe4b07c3ee54c96811ac862bcf6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 0
 --- !u!195 &91862870
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -369,6 +370,7 @@ GameObject:
   - 23: {fileID: 251144995}
   - 54: {fileID: 251144994}
   - 195: {fileID: 251144992}
+  - 114: {fileID: 251144993}
   - 114: {fileID: 251144991}
   m_Layer: 0
   m_Name: Player
@@ -385,9 +387,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 251144990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b88313aac7a4b48b9c8ea4f7071b19, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b4b3a8dfc12dd143bd89b026965c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 0
 --- !u!195 &251144992
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -408,6 +411,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &251144993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 251144990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e224ad53d0ed1ff41897dc894b96353e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &251144994
 Rigidbody:
   m_ObjectHideFlags: 0
