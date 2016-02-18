@@ -22,7 +22,7 @@ public class LivingEntity : MonoBehaviour//, IDamageable
     protected bool life = true;
     //public float startingHealth;
     [SerializeField]
-    protected float health;
+    public float health;
     [SerializeField]
     protected float range;
     [SerializeField]
