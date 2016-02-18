@@ -3,17 +3,27 @@ using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : LivingEntity {
-
-    public enum State { Idle, Chasing, Attacking };
-    State currentState;
-
+    
     // Use this for initialization
-    void Start () {
+    protected override void Start ()
+    {
+        base.Start();
         gameObject.tag = "Enemy";
-	}
+    }
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	protected override void Update ()
+    {
+        base.Update();
+
+        if (currentState == LivingEntityState.Idle)
+        {
+            if (target)
+            {
+                chasing = true;
+                Move(target);
+            }
+        }
+
+    }
 }

@@ -1,44 +1,150 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LivingEntity : MonoBehaviour, IDamageable
+public class LivingEntity : MonoBehaviour//, IDamageable
 {
+    public enum LivingEntityState { Idle, Moving, Attacking };
 
-    public float startingHealth;
+    protected Rigidbody myRigidBody;
+    protected NavMeshAgent agent;
+
+    LivingEntityState CurrentState;
+    public LivingEntityState currentState
+    {
+        get
+        {
+            return CurrentState;
+        }
+    }
+    [SerializeField]
+    protected bool chasing = false;
+
+    protected bool life = true;
+    //public float startingHealth;
+    [SerializeField]
     protected float health;
-    protected bool dead;
+    [SerializeField]
+    protected float range;
+    [SerializeField]
+    protected float attackDamage;
+    private float attackTime;
+
+
+    public LivingEntity target;
+    public float distanceToTarget
+    {
+        get
+        {
+            if (target)
+            {
+                return (target.transform.position - transform.position).magnitude;
+            }
+            else
+            {
+                return Mathf.Infinity;
+            }
+        }
+    }
 
     public event System.Action OnDeath;
 
     protected virtual void Start()
     {
-        health = startingHealth;
+        agent = GetComponent<NavMeshAgent>();
     }
-
-    public void TakeHit(float damage, RaycastHit hit)
+    protected virtual void Update()
     {
-        //Stuff with hit variable coming soon
-        TakeDamage(damage);
+        switch (CurrentState)
+        {
+                // ====
+            case LivingEntityState.Idle:
+                if (target && chasing)
+                {
+                    if (!AttackTarget(true))
+                    {
+                        Move(target);
+                    }
+                } 
+                else
+                {
+                    chasing = false;
+                }
+                break;
+                // ====
+            case LivingEntityState.Moving:
+                break;
+                // ====
+            case LivingEntityState.Attacking:
+                agent.destination = transform.position;
+                if (attackTime > 0)
+                {
+                    attackTime -= Time.deltaTime;
+                }
+                else
+                {
+                    CurrentState = LivingEntityState.Idle;
+                }
+                break;
+                // ====
+        }
     }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-
-        if (health <= 0 && !dead)
+        if (damage >= health)
         {
+            health = 0;
             Die();
+        }
+        else
+        {
+            health -= damage;
+        }
+    }
+
+    protected void Move(Vector3 _dest)
+    {
+        agent.destination = _dest;
+        //chasing = false;
+    }
+    protected void Move(LivingEntity _target)
+    {
+        agent.destination = _target.transform.position;
+    }
+
+    protected virtual bool AttackTarget(bool _repeatAttack)
+    {
+        if (distanceToTarget <= range)
+        {
+            CurrentState = LivingEntityState.Attacking;
+            attackTime = 1;
+            //animation trigger goes here
+            target.TakeDamage(attackDamage);
+            Debug.Log(gameObject.name + " Attacked " + target.gameObject.name + "!!");
+            if (!_repeatAttack)
+            {
+                chasing = false;
+            }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
     [ContextMenu("Self Destruct")]
     protected void Die()
     {
-        dead = true;
+        life = false;
         if (OnDeath != null)
         {
             OnDeath();
         }
         GameObject.Destroy(gameObject);
     }
+
+
+
+
 }
