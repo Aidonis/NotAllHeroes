@@ -19,7 +19,7 @@ public class TargetHealth : MonoBehaviour {
     {
         if (player.target != null && player.target.tag == "Enemy")
         {
-            m_targetHealth.text = "Health:" + player.target.health;
+            m_targetHealth.text = "Target Health:" + player.target.health;
         }
     }
 }

@@ -1,21 +1,73 @@
 fileFormatVersion: 2
-guid: 6617531e070aaad4382d4032e29a8dbe
-timeCreated: 1455830754
+guid: 1e3da64c2ac7a5b4c912481aca878b29
+timeCreated: 1455839810
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: box_model_man_04:pCube2
-    100002: //RootNode
-    100004: imagePlane1
-    100006: imagePlane2
-    400000: box_model_man_04:pCube2
-    400002: //RootNode
-    400004: imagePlane1
-    400006: imagePlane2
-    2300000: box_model_man_04:pCube2
-    3300000: box_model_man_04:pCube2
-    4300000: box_model_man_04:pCube2
+    100000: chest
+    100002: head
+    100004: hip
+    100006: l_ancal
+    100008: l_claw
+    100010: l_ear_01
+    100012: l_ear_02
+    100014: l_ear_03
+    100016: l_thigh
+    100018: l_wing_01
+    100020: l_wing_02
+    100022: l_wing_03
+    100024: l_wing_04
+    100026: l_wing_05
+    100028: //RootNode
+    100030: neck
+    100032: r_ancal
+    100034: r_claw
+    100036: r_ear_01
+    100038: r_ear_02
+    100040: r_ear_03
+    100042: r_thigh
+    100044: r_wing_01
+    100046: r_wing_02
+    100048: r_wing_03
+    100050: r_wing_04
+    100052: r_wing_05
+    100054: spine
+    100056: tail
+    100058: tail_tip
+    100060: top_of_head
+    400000: chest
+    400002: head
+    400004: hip
+    400006: l_ancal
+    400008: l_claw
+    400010: l_ear_01
+    400012: l_ear_02
+    400014: l_ear_03
+    400016: l_thigh
+    400018: l_wing_01
+    400020: l_wing_02
+    400022: l_wing_03
+    400024: l_wing_04
+    400026: l_wing_05
+    400028: //RootNode
+    400030: neck
+    400032: r_ancal
+    400034: r_claw
+    400036: r_ear_01
+    400038: r_ear_02
+    400040: r_ear_03
+    400042: r_thigh
+    400044: r_wing_01
+    400046: r_wing_02
+    400048: r_wing_03
+    400050: r_wing_04
+    400052: r_wing_05
+    400054: spine
+    400056: tail
+    400058: tail_tip
+    400060: top_of_head
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -41,7 +93,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

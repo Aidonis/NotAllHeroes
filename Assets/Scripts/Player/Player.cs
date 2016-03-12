@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(PlayerController))]
 public class Player : LivingEntity {
 
     private float inputDelay = 0;
